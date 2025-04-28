@@ -80,12 +80,12 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- Lombok -->
+    <!-- Lombok dependency -->
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.30</version> <!-- Última versão estável até agora -->
-      <scope>provided</scope>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.22</version> <!-- Use a versão mais recente -->
+        <scope>provided</scope>
     </dependency>
 
     <!-- MariaDB Driver -->
@@ -124,6 +124,16 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
+        <!-- lombok -->
+      <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version> <!-- Ou uma versão mais recente -->
+            <configuration>
+                <source>1.8</source> <!-- ou a versão do Java que você está utilizando -->
+                <target>1.8</target>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 </project>
