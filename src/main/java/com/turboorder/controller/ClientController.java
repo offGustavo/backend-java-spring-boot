@@ -1,14 +1,14 @@
 
 package com.turboorder.controller;
 
-import com.turboorder.dto.ClientDTO;
+import com.turboorder.dto.ClienteDTO;
 import com.turboorder.service.ClientService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/client")
+@RequestMapping("/clientes")
 public class ClientController {
 
   private final ClientService service;
@@ -18,17 +18,17 @@ public class ClientController {
   }
 
   @GetMapping
-  public List<ClientDTO> getAllClients() {
+  public List<ClienteDTO> getAllClients() {
     return service.getAllClients();
   }
 
   @PostMapping
-  public ClientDTO addClient(@RequestBody ClientDTO dto) {
+  public ClienteDTO addClient(@RequestBody ClienteDTO dto) {
     return service.addClient(dto);
   }
 
   @PutMapping("/{cliId}")
-  public void updateClient(@PathVariable Integer cliId, @RequestBody ClientDTO dto) {
+  public void updateClient(@PathVariable Integer cliId, @RequestBody ClienteDTO dto) {
     service.updateClient(cliId, dto);
   }
 
@@ -37,12 +37,12 @@ public class ClientController {
     service.deleteClient(cliId);
   }
 
-  @GetMapping("/phone/{telefone}")
-  public ClientDTO getClientByPhone(@PathVariable String telefone) {
+  @GetMapping("/telefone/{telefone}")
+  public ClienteDTO getClientByPhone(@PathVariable String telefone) {
     return service.getClientByPhone(telefone);
   }
 
-  @GetMapping("/phone-suggestions/{partialTelefone}")
+  @GetMapping("/telefone-sugestoes/{partialTelefone}")
   public List<String> getPhoneSuggestions(@PathVariable String partialTelefone) {
     return service.getPhoneSuggestions(partialTelefone);
   }

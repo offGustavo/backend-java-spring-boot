@@ -26,4 +26,77 @@ public class Cliente {
   @ManyToOne
   @JoinColumn(name = "endereco_fk")
   private Endereco endereco;
+
+  public Integer getCliId() {
+    return cliId;
+  }
+
+  public void setCliId(Integer cliId) {
+    this.cliId = cliId;
+  }
+
+  public String getCliNome() {
+    return cliNome;
+  }
+
+  public void setCliNome(String cliNome) {
+    this.cliNome = cliNome;
+  }
+
+  public String getCliSobrenome() {
+    return cliSobrenome;
+  }
+
+  public void setCliSobrenome(String cliSobrenome) {
+    this.cliSobrenome = cliSobrenome;
+  }
+
+  public Integer getCliNumero() {
+    return cliNumero;
+  }
+
+  public void setCliNumero(Integer cliNumero) {
+    this.cliNumero = cliNumero;
+  }
+
+  public String getCliComplemento() {
+    return cliComplemento;
+  }
+
+  public void setCliComplemento(String cliComplemento) {
+    this.cliComplemento = cliComplemento;
+  }
+
+  public Boolean getCliAtivo() {
+    return cliAtivo;
+  }
+
+  public void setCliAtivo(Boolean cliAtivo) {
+    this.cliAtivo = cliAtivo;
+  }
+
+  public Integer getEmpresaFk() {
+    return empresaFk;
+  }
+
+  public void setEmpresaFk(Integer empresaFk) {
+    this.empresaFk = empresaFk;
+  }
+
+  public Contato getContato() {
+    return contato;
+  }
+
+  public void setContato(Contato contato) {
+    this.contato = contato;
+  }
+
+  public Endereco getEndereco() {
+    return endereco;
+  }
+
+  public void setEndereco(Endereco endereco) {
+    this.endereco = endereco;
+  }
+
 }

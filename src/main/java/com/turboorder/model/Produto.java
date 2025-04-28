@@ -10,58 +10,58 @@ public class Produto {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "pro_id")
-  private Integer id;
+  private Integer proId;
 
   @Column(name = "pro_nome", length = 20)
-  private String nome;
+  private String proNome;
 
   @Column(name = "pro_tipo", length = 20)
-  private String tipo;
+  private String proTipo;
 
   @Column(name = "pro_ativo")
-  private Boolean ativo;
+  private Boolean proAtivo;
 
   // Construtores
   public Produto() {
   }
 
-  public Produto(Integer id, String nome, String tipo, Boolean ativo) {
-    this.id = id;
-    this.nome = nome;
-    this.tipo = tipo;
-    this.ativo = ativo;
+  public Produto(Integer proId, String proNome, String proTipo, Boolean proAtivo) {
+    this.proId = proId;
+    this.proNome = proNome;
+    this.proTipo = proTipo;
+    this.proAtivo = proAtivo;
   }
 
-  // Getters e Setters
-  public Integer getId() {
-    return id;
+  public Integer getProId() {
+    return proId;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
+  public void setProId(Integer proId) {
+    this.proId = proId;
   }
 
-  public String getNome() {
-    return nome;
+  public String getProNome() {
+    return proNome;
   }
 
-  public void setNome(String nome) {
-    this.nome = nome;
+  public void setProNome(String proNome) {
+    this.proNome = proNome;
   }
 
-  public String getTipo() {
-    return tipo;
+  public String getProTipo() {
+    return proTipo;
   }
 
-  public void setTipo(String tipo) {
-    this.tipo = tipo;
+  public void setProTipo(String proTipo) {
+    this.proTipo = proTipo;
   }
 
-  public Boolean getAtivo() {
-    return ativo;
+  public Boolean getProAtivo() {
+    return proAtivo;
   }
 
-  public void setAtivo(Boolean ativo) {
-    this.ativo = ativo;
+  public void setProAtivo(Boolean proAtivo) {
+    this.proAtivo = proAtivo;
   }
+
 }

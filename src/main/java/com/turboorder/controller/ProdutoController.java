@@ -43,9 +43,9 @@ public class ProdutoController {
     return produtoService.buscarPorId(id)
         .map(produtoExistente -> {
           // Atualiza os campos do produto
-          produtoExistente.setNome(produtoAtualizado.getNome());
-          produtoExistente.setTipo(produtoAtualizado.getTipo());
-          produtoExistente.setAtivo(produtoAtualizado.getAtivo());
+          produtoExistente.setProNome(produtoAtualizado.getProNome());
+          produtoExistente.setProTipo(produtoAtualizado.getProTipo());
+          produtoExistente.setProAtivo(produtoAtualizado.getProAtivo());
           Produto atualizado = produtoService.salvar(produtoExistente);
           return ResponseEntity.ok(atualizado);
         })

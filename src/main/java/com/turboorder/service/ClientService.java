@@ -1,7 +1,7 @@
 
 package com.turboorder.service;
 
-import com.turboorder.dto.ClientDTO;
+import com.turboorder.dto.ClienteDTO;
 import com.turboorder.model.Cliente;
 import com.turboorder.model.Contato;
 import com.turboorder.model.Endereco;
@@ -28,14 +28,14 @@ public class ClientService {
     this.enderecoRepository = enderecoRepository;
   }
 
-  public List<ClientDTO> getAllClients() {
+  public List<ClienteDTO> getAllClients() {
     return clienteRepository.findAllByCliAtivoTrue()
         .stream()
         .map(this::convertToDTO)
         .collect(Collectors.toList());
   }
 
-  public ClientDTO getClientByPhone(String telefone) {
+  public ClienteDTO getClientByPhone(String telefone) {
     Cliente cliente = clienteRepository.findByContato_ConTelefoneAndCliAtivoTrue(telefone)
         .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
     return convertToDTO(cliente);
@@ -48,7 +48,7 @@ public class ClientService {
         .collect(Collectors.toList());
   }
 
-  public ClientDTO addClient(ClientDTO dto) {
+  public ClienteDTO addClient(ClienteDTO dto) {
     Endereco endereco = new Endereco();
     endereco.setEndCep(dto.getCliCep());
     endereco.setEndCidade(dto.getCliCidade());
@@ -74,7 +74,7 @@ public class ClientService {
     return convertToDTO(cliente);
   }
 
-  public void updateClient(Integer cliId, ClientDTO dto) {
+  public void updateClient(Integer cliId, ClienteDTO dto) {
     Cliente cliente = clienteRepository.findById(cliId)
         .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
 
@@ -101,8 +101,8 @@ public class ClientService {
     clienteRepository.save(cliente);
   }
 
-  private ClientDTO convertToDTO(Cliente cliente) {
-    ClientDTO dto = new ClientDTO();
+  private ClienteDTO convertToDTO(Cliente cliente) {
+    ClienteDTO dto = new ClienteDTO();
     dto.setCliId(cliente.getCliId());
     dto.setCliNome(cliente.getCliNome());
     dto.setCliSobrenome(cliente.getCliSobrenome());
