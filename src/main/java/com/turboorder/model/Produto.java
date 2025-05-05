@@ -21,7 +21,6 @@ public class Produto {
   @Column(name = "pro_ativo")
   private Boolean proAtivo;
 
-  // Construtores
   public Produto() {
   }
 
@@ -45,7 +44,10 @@ public class Produto {
   }
 
   public void setProNome(String proNome) {
-    this.proNome = proNome;
+    if(!(proNome.isEmpty())  && proNome.length() > 20) {
+      this.proNome = proNome;
+    }
+    throw new IllegalArgumentException("Nome do produto não pode ser vazio ou maior que 20 caracteres");
   }
 
   public String getProTipo() {
