@@ -40,8 +40,11 @@ public class Cliente {
   }
 
   public void setCliNome(String cliNome) {
-    this.cliNome = cliNome;
-  }
+    if(!(cliNome.isEmpty()) && cliNome.length() < 256){
+      this.cliNome = cliNome;
+    }
+    throw new IllegalArgumentException("O nome do cliente não pode ser vazio ou exceder 256 caracteres");
+ }
 
   public String getCliSobrenome() {
     return cliSobrenome;
