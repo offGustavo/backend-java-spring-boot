@@ -1,12 +1,21 @@
 // src/main/java/com/turboorder/model/Produto.java
 package com.turboorder.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+/**
+ * Produto
+ */
 @Entity
 @Table(name = "pro_produto")
 public class Produto {
 
+  // TODO: change this
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "pro_id")
@@ -44,10 +53,10 @@ public class Produto {
   }
 
   public void setProNome(String proNome) {
-    if(!(proNome.isEmpty())  && proNome.length() > 20) {
-      this.proNome = proNome;
+    if (proNome.isEmpty() && proNome.length() > 20) {
+      throw new IllegalArgumentException("Nome do produto não pode ser vazio ou maior que 20 caracteres");
     }
-    throw new IllegalArgumentException("Nome do produto não pode ser vazio ou maior que 20 caracteres");
+    this.proNome = proNome;
   }
 
   public String getProTipo() {

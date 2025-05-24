@@ -1,6 +1,11 @@
 
 package com.turboorder.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
 import com.turboorder.dto.ClienteDTO;
 import com.turboorder.model.Cliente;
 import com.turboorder.model.Contato;
@@ -8,11 +13,6 @@ import com.turboorder.model.Endereco;
 import com.turboorder.repository.ClienteRepository;
 import com.turboorder.repository.ContatoRepository;
 import com.turboorder.repository.EnderecoRepository;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ClientService {
